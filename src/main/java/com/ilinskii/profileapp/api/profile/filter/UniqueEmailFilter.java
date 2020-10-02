@@ -41,10 +41,12 @@ public class UniqueEmailFilter implements Filter {
             if (null != email && profileService.existByEmail(email)) {
                 httpResponse.setStatus(HttpServletResponse.SC_FORBIDDEN);
                 objectMapper.writeValue(httpResponse.getOutputStream(), new ErrorMsg("Email already in use"));
+                return;
             }
         } catch (MismatchedInputException e) {
             httpResponse.setStatus(HttpServletResponse.SC_BAD_REQUEST);
             objectMapper.writeValue(httpResponse.getOutputStream(), new ErrorMsg("Could not read request"));
+            return;
         }
 
         filterChain.doFilter(wrappedRequest, httpResponse);
