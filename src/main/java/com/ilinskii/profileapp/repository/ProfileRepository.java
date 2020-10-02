@@ -11,4 +11,6 @@ public interface ProfileRepository extends JpaRepository<Profile, Long> {
     Optional<Profile> findFirstByOrderByCreatedDesc();
 
     Set<Profile> findByEmailIgnoreCase(String email);
+
+    Boolean existsByEmailIgnoreCase(String email);
 }

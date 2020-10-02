@@ -58,4 +58,9 @@ public class ProfileService {
         return profiles.stream().findFirst()
                 .orElseThrow(() -> new NotFoundObjectException("Profile not found. email = " + email));
     }
+
+    @Transactional(readOnly = true)
+    public Boolean existByEmail(@NonNull String email) {
+        return profileRepository.existsByEmailIgnoreCase(email);
+    }
 }
