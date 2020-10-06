@@ -20,7 +20,6 @@ public class ProfileCreateRequest {
     private String name;
 
     @NotEmpty(message = "Email should not be empty")
-
     @Pattern(regexp = "^[a-zA-Z0-9_!#$%&’*+/=?`{|}~^.-]+@[a-zA-Z0-9.-]+$", message = "Email is incorrect")
     @Size(max = Profile.SIZE_EMAIL, message = "Email size should be less than " + Profile.SIZE_EMAIL)
     private String email;

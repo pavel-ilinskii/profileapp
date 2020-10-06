@@ -20,6 +20,8 @@ import javax.servlet.http.HttpServletRequest;
 @RequiredArgsConstructor
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
+    public static final String SEC_HEADER = "X-API-Key";
+
     @Value("${api-key}")
     private String apiKey;
 

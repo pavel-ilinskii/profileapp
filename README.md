@@ -31,5 +31,11 @@ Swagger is configured for X-API-Key header
 
 ### Exit
 Open in browser http://localhost:8010/exit
+
+### Run tests
+Be sure that docker engine is installed on your machine
+
+    mvnw clean test
+
  
 
